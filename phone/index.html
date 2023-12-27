@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Phone</title>
+</head>
+
+<body>
+    <div class="phone_frame">
+        <div class="norch">
+            <div class="rounded">
+
+            </div>
+        </div>
+        <div class="nav">
+            <div class="left">
+                <span>fw-сеть</span>
+            </div>
+            <div class="right">
+                <ion-icon name="cellular"></ion-icon>
+                <ion-icon name="wifi"></ion-icon>
+                <ion-icon name="battery-full"></ion-icon>
+            </div>
+        </div>
+        <div class="app_container">
+            <div class="bg_image">
+                <div class="bg_frame">
+                </div>
+            </div>
+        </div>
+        <div class="lock_screen active">
+            <div class="block">
+                <ion-icon name="lock-closed"></ion-icon>
+            </div>
+            <div class="time">
+                <span>Суббота, 23 декабря</span>
+                <h1>12:20</h1>
+
+            </div>
+            <div class="scr_lock_nav">
+                <div class="left">
+                    <button>
+                        <ion-icon name="flashlight"></ion-icon>
+                    </button>
+                </div>
+                <div class="right">
+                    <button><ion-icon name="camera"></ion-icon></button>
+                </div>
+            </div>
+            <div class="unlock_button">
+            </div>
+            <div class="button_under"></div>
+        </div>
+        <div class="application_menu">
+            <div class="applications">
+                <div class="screen_first active_screen" id="screen_first">
+                    <div class="icon_section">
+
+                        <div class="icon">
+                            <button class="facetime message">
+                                <ion-icon name="videocam"></ion-icon>
+                            </button>
+                            <label>facetime</label>
+                        </div>
+                        <div class="icon">
+                            <button class="camera">
+                                <ion-icon name="camera"></ion-icon>
+                            </button>
+                            <label>Camera</label>
+                        </div>
+                        <div class="icon">
+                            <button class="bi_envelope_fill mail">
+                                <ion-icon name="mail"></ion-icon>
+                            </button>
+                            <label>Mail</label>
+                        </div>
+                        <div class="icon">
+                            <button class="ibooke ">
+                                <ion-icon name="book"></ion-icon>
+                            </button>
+                            <label>IBook</label>
+                        </div>
+
+                    </div>
+                    <div class="icon_section">
+
+                        <div class="icon">
+                            <button class="itunes ">
+                                <ion-icon name="star"></ion-icon>
+                            </button>
+                            <label>ITunes</label>
+                        </div>
+                        <div class="icon">
+                            <button class="wallet">
+                                <ion-icon name="wallet-outline"></ion-icon>
+                            </button>
+                            <label>Wallet</label>
+                        </div>
+                        <div class="icon">
+                            <button class="appstore">
+                                <ion-icon name="logo-apple-appstore"></ion-icon>
+                            </button>
+                            <label>Mail</label>
+                        </div>
+                        <div class="icon">
+                            <button class="phone call">
+                                <ion-icon name="call"></ion-icon>
+                            </button>
+                            <label>Phone</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="screen_second">
+                </div>
+                <div class="indicators">
+                    <span class="span_1 active" onclick="left()"></span>
+                    <span class="span_2" onclick="right()"></span>
+                </div>
+                <div class="button_navigation">
+                    <div class="button_app call">
+                        <ion-icon name="call"></ion-icon>
+                    </div>
+                    <div class="button_app message">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </div>
+                    <div class="button_app camera">
+                        <ion-icon name="camera"></ion-icon>
+                    </div>
+                    <div class="button_app mail">
+                        <ion-icon name="mail"></ion-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="script.js"></script>
+</body>
+
+</html>

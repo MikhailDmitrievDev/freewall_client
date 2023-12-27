@@ -1,0 +1,367 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  transition: 0.8s;
+}
+
+@font-face {
+  font-family: "BlinkMacSystemFont";
+  src: url("fonts/BlinkMacSystemFont-Black.woff2") format("woff2"),
+    url("fonts/BlinkMacSystemFont-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+body {
+  position: fixed;
+  bottom: 0;
+  right: 22px;
+  transform: translateY(100%);
+  display: flex;
+  transition: transform 1s;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  font-family: "BlinkMacSystemFont";
+}
+
+.phone_frame {
+  background-color: #fff;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  width: 240px;
+  border: 8px solid #000;
+  border-radius: 40px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 0px 0px 0.3px;
+}
+
+.phone_frame .norch {
+  position: absolute;
+  top: 2px;
+  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 18px;
+  width: 70px;
+  background-color: #000;
+  border-radius: 60px;
+}
+
+.norch .rounded {
+  position: relative;
+}
+
+.norch::before {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 7px;
+  height: 6px;
+  width: 6px;
+  background-color: rgb(255, 255, 255, 0.333px);
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 3px 0px rgb(51, 51, 51, 0.71);
+}
+
+.norch::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 5px;
+  height: 10px;
+  width: 10px;
+  background-color: rgb(255, 255, 255, 0.43px);
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 3px 0px rgb(51, 51, 51, 0.71);
+}
+
+.app_container .bg_image .bg_frame {
+  background-image: url("/image/bg_def.png");
+  background-size: cover;
+  position: relative;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.nav {
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  height: 30px;
+  left: 0;
+  z-index: 90;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav .left {
+  padding-left: 22px;
+  font-size: 9px;
+  text-align: center;
+  color: rgb(255, 255, 255, 0.829);
+}
+
+.nav .right {
+  padding-right: 15px;
+}
+
+.nav .right ion-icon {
+  color: rgb(255, 255, 255, 0.829);
+  font-size: 15px;
+}
+
+.active {
+  z-index: 199;
+}
+
+.lock_screen {
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  transition: 0.8s;
+  overflow: hidden;
+  left: 0;
+  height: 0%;
+  width: 100%;
+}
+
+.lock_screen.active {
+  height: 100% !important;
+}
+
+.block {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  height: 100px;
+  font-size: 20px;
+  color: rgb(255, 255, 255, 0.829);
+}
+
+.lock_screen .time {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80px;
+  width: 100%;
+  text-align: center;
+}
+
+.lock_screen h1 {
+  font-size: 40px;
+  height: 30px;
+  color: rgb(255, 255, 255, 0.829);
+}
+
+.lock_screen span {
+  font-size: 15px;
+  color: rgb(255, 255, 255, 0.829);
+}
+
+.scr_lock_nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+}
+
+.scr_lock_nav button {
+  margin: 20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  background-color: rgb(0, 0, 0, 0.452);
+  border: 0;
+  cursor: pointer;
+}
+
+.scr_lock_nav button.r-deg {
+  transform: rotate(-45deg);
+}
+
+.button_under {
+  position: absolute;
+  bottom: 5px;
+  height: 2px;
+  border-radius: 20px;
+  width: 90px;
+  left: 50%;
+  z-index: 102;
+  background-color: #fff;
+  transform: translateX(-50%);
+}
+
+.application_menu {
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(5); <!-- 0.5 -->
+  visibility: visible;
+}
+
+.application_menu.active {
+  transform: scale(1);
+  visibility: visible;
+}
+
+.button_navigation {
+  position: absolute;
+  bottom: 10px;
+  width: 190px;
+  height: fit-content;
+  left: 0;
+  margin: 10px;
+  border-radius: 13px;
+  padding: 6px 6px;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(255, 255, 255, 0.222);
+}
+
+.button_navigation .button_app {
+  width: fit-content;
+  line-height: 48px;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  background-color: rgb(255, 255, 255, 0.829);
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+.screen_first {
+  position: absolute;
+  top: 35px;
+  width: 100%;
+  left: 0;
+  transition: 0.7s;
+}
+
+
+
+.screen_first:nth-child(2) {
+  visibility: hidden;
+  left: 300px !important;
+}
+
+.screen_first .icon {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.screen_first .icon button {
+  height: 40px;
+  cursor: pointer;
+  width: 40px;
+  font-size: 30px;
+  transition: 0.8s;
+  border: 0;
+  line-height: 20px;
+  border-radius: 10px;
+}
+
+.screen_first .icon label {
+  font-size: 8px;
+  margin-top: 2px;
+  color: #fff;
+  transition: 0.8s;
+}
+
+.applications {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.7s;
+  height: 100%;
+  width: 100%;
+  display: inline-flex;
+}
+
+.icon_section {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-around;
+}
+
+.indicators {
+  display: flex;
+  position: absolute;
+  background-color: rgb(255, 255, 255, 0.21);
+  border-radius: 5px;
+  bottom: 80px;
+  height: 15px;
+  width: 30px;
+  left: 50%;
+  text-align: center;
+  justify-content: center;
+  transform: translateX(-50%);
+}
+
+.indicators span {
+  width: 4px;
+  height: 4px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  margin: 4px 2px;
+  border-radius: 50%;
+}
+.indicators span.active {
+  width: 4px;
+  height: 4px;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.mail {
+  color: #fff;
+  background-image: linear-gradient(#2452ed, #3e93d7);
+}
+
+.camera {
+  color: #000;
+  background-image: linear-gradient(#d0c8c8, #939393);
+}
+
+.wallet {
+  background-image: linear-gradient(#906800, #aa8421);
+  color: #fff;
+}
+
+.call {
+  color: #fff;
+  background-image: linear-gradient(#59ff7e, #59ff7e);
+}
+
+.message {
+  color: #fff;
+  background-image: linear-gradient(#59ff7e, #59ff7e);
+}
+
+.message ion-icon {
+  fill: #fff;
+}
