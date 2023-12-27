@@ -29,7 +29,7 @@ function App() {
           case "phone":
             return <Phone />;
           default:
-            return null;
+            return <Phone />;
         }
       })()}
     </div>
