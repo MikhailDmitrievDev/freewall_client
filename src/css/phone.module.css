@@ -383,6 +383,13 @@
   margin-left: 10px;
 }
 
+.iphone_label {
+  display: grid;
+  place-content: center;
+  font-weight: bold;
+  height: 15px;
+}
+
 .iphone_button {
   display: grid;
   place-content: center;

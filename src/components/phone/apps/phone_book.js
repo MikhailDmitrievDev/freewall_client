@@ -33,7 +33,7 @@ const PhoneBook = ({ handleScreenChange }) => {
   ));
   return (
     <div className={style.call_container}>
-      <label>{labelState}</label>
+      <label className={style.iphone_label}>{labelState}</label>
       <div className={style.iphone_button_container}>{buttons}</div>
 
       <div className={style.manage_buttons}>

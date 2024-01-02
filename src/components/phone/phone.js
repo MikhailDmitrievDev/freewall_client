@@ -13,6 +13,7 @@ import {
 function Phone() {
   const [locked, setLocked] = useState(true);
   const [currentScreen, setScreen] = useState("");
+  const [currenColorIcons, setColorIcons] = useState("#fff");
 
   const body_p = useRef(null);
   const application_menuRef = useRef(null);
@@ -23,9 +24,14 @@ function Phone() {
   }, []);
 
   const handleScreenChange = (newScreen) => {
+    if (newScreen === "phoneBook") {
+      button_under.current.style.backgroundColor = "#000";
+      setColorIcons("#000");
+    }
+    if (newScreen === "mainScreen") {
+      setColorIcons("#fff");
+    }
     setScreen(newScreen);
-    button_under.current.style.backgroundColor = "#000";
-
   };
 
   const handleDivClick = () => {
@@ -44,9 +50,9 @@ function Phone() {
             <span>fw-сеть</span>
           </div>
           <div className={style.right}>
-            <Cellular color={"#fff"} height={"14px"} />
-            <Wifi color={"#fff"} height={"15px"} />
-            <BatteryFull color={"#fff"} height={"15px"} />
+            <Cellular color={currenColorIcons} width={"15px"} height={"14px"} />
+            <Wifi color={currenColorIcons} height={"15px"} />
+            <BatteryFull color={currenColorIcons} height={"15px"} />
           </div>
         </div>
         <div className={style.app_container}>
@@ -78,7 +84,6 @@ function Phone() {
             </div>
           </div>
           <div className={style.unlock_button}></div>
-          
         </div>
         <div ref={application_menuRef} className={style.application_menu}>
           {(() => {
@@ -92,7 +97,11 @@ function Phone() {
             }
           })()}
         </div>
-        <div className={style.button_under} ref={button_under} onClick={() => handleScreenChange("mainScreen")}></div>
+        <div
+          className={style.button_under}
+          ref={button_under}
+          onClick={() => handleScreenChange("mainScreen")}
+        ></div>
       </div>
     </div>
   );
