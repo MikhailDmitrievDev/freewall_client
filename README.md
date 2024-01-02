@@ -1,7 +1,10 @@
 # Interfaces for GTA5 server client.
 
 ## auth v0.1
-![Название GIF](./files/auth.gif)
+![auth](./files/auth.gif)
+
+## create person v0.1
+![create_person](./files/create_person.gif)
 
 ## phone v0.1
-![Название GIF](./files/phone.gif)
+![phone](./files/phone.gif)
