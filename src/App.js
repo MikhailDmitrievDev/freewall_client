@@ -2,7 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Autharization from "./components/auth";
 import Phone from "./components/phone/phone";
-import SettingPerson from "./components/setting_person";
+import SettingPerson from "./components/person/setting_person";
 
 function App() {
   const [page, setPage] = useState("");
