@@ -54,20 +54,6 @@
   animation: gradientAnimation 5s linear infinite;
 }
 
-.left_block_main_person_info{
-  position: relative;
-  top: 5vh;
-  display: flex;
-  flex-direction: column;
-  max-height: 550px;
-  padding: 5px 0 5px 0;
-  height: 100%;
-  border-top: 2px solid;
-  border-bottom: 2px solid;
-  border-image-slice: 1;
-  animation: gradientAnimation 5s linear infinite;
-}
-
 @keyframes gradientAnimation {
   0% {
     border-image-source: linear-gradient(to left, #88b5a2, #418393);
@@ -83,13 +69,103 @@
   font-size: 7px;
   font-weight: bold;
   text-transform: uppercase;
+  opacity: 0.7;
 
 }
-
+/* 
 .face_item:hover {
+  opacity: 1;
+} */
+
+.face_item.active_item {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Блок стилей для нижнего блока настроек лица */
+.left_block_bottom_componenet{
+  position: absolute;
+  max-width: 400px;
+  width: 100%;
+  bottom: 20%;
+}
+
+
+.two_range_input{
+  margin-top: 5px;
+}
+
+.slider_markup{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+  color: rgba(0, 0, 0, 0.45);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+/*-------------------------------------------*/
+
+
+/* Блок стилей для person_info */
+.left_block_main_person_info{
+  position: relative;
+  top: 5vh;
+  display: flex;
+  flex-direction: column;
+  max-height: 550px;
+  padding: 5px 0 5px 0;
+  height: 100%;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-image-slice: 1;
+  animation: gradientAnimation 5s linear infinite;
+}
+
+.person_input{
+  width: 350px;
+  height: 45px;
+  border: none;
+  border-radius: 15px;
+  margin: 10px 0;
+  padding-left: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: rgba(0, 0, 0, 0.015);
+}
+
+.person_select{
+  width: 350px;
+  height: 45px;
+  border: none;
+  border-radius: 15px;
+  margin: 10px 0;
+  padding-left: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.gender{
+  margin: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item_gender{
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.item_gender:hover{
   transform: scale(1.1);
 }
 
+/* ------------------------------------------*/
 .hr_self {
   margin: -30px auto 10px;
   padding: 0;
@@ -174,9 +250,6 @@
   height: 160px;
 }
 
-.detail_setting_gen {
-}
-
 .species {
   display: flex;
   flex-direction: column;
@@ -255,4 +328,17 @@
   background-color: #4caf50;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.slyder_type_two{
+  -webkit-appearance: none;
+  margin-top: 5px;
+  width: 80%;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
