@@ -47,8 +47,11 @@ function Autharization() {
   const handleSubmitLogin = (event) => {
     event.preventDefault();
     if (!emailRegex.test(formData.email)) {
-      mp.trigger("CEF:CLIENT::CHAT_MESSAGE", "Некорректный email (формат `test@test.net`)");
-      return
+      mp.trigger(
+        "CEF:CLIENT::CHAT_MESSAGE",
+        "Некорректный email (формат `test@test.net`)"
+      );
+      return;
     }
     mp.trigger(
       "CEF:CLIENT::LOGIN_BUTTON_CLICK",

@@ -38,15 +38,29 @@
   opacity: 0.5;
 }
 
-
 .left_blocK_main {
   position: relative;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 10px;
   top: 5vh;
-  max-height: 400px;
+  max-height: 430px;
+  padding: 5px 0 5px 0;
+  height: 100%;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-image-slice: 1;
+  animation: gradientAnimation 5s linear infinite;
+}
+
+.left_block_main_person_info{
+  position: relative;
+  top: 5vh;
+  display: flex;
+  flex-direction: column;
+  max-height: 550px;
+  padding: 5px 0 5px 0;
   height: 100%;
   border-top: 2px solid;
   border-bottom: 2px solid;
@@ -66,6 +80,10 @@
 .face_item {
   width: 80px;
   cursor: pointer;
+  font-size: 7px;
+  font-weight: bold;
+  text-transform: uppercase;
+
 }
 
 .face_item:hover {
@@ -96,7 +114,7 @@
 
 .genetics {
   position: absolute;
-  top: 20%;
+  top: 15%;
   width: 100%;
   height: 50vh;
 }
@@ -117,6 +135,7 @@
 
 .select_first_gene button {
   border: none;
+  background: none;
 }
 
 .select_second_gene {
@@ -135,6 +154,7 @@
 
 .select_second_gene button {
   border: none;
+  background: none;
 }
 
 .present {
@@ -166,7 +186,7 @@
   font-size: 15px;
   position: absolute;
   width: 90%;
-  bottom: 15%;
+  top: 80%;
 }
 
 .similarity {
@@ -178,7 +198,7 @@
   flex-direction: column;
   position: absolute;
   width: 90%;
-  bottom: 2%;
+  top: 95%;
 }
 
 .save_button {
