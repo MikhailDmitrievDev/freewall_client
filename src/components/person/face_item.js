@@ -1292,17 +1292,17 @@ function FaceItemComponent() {
                   title="Высота бровей"
                   left_input_scale={"низкий"}
                   rigth_input_scale={"высокой"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />,
                 <InputRangeSettingPerson
                   title="Глубина бровей"
                   left_input_scale={"низкий"}
                   rigth_input_scale={"высокой"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />,
               ];
             case "eyeSetting":
@@ -1312,9 +1312,9 @@ function FaceItemComponent() {
                   title="Размер глаз"
                   left_input_scale={"уже"}
                   rigth_input_scale={"шире"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />,
               ];
             case "noseSetting":
@@ -1325,17 +1325,17 @@ function FaceItemComponent() {
                   title="Глубина моста носа"
                   left_input_scale={"наружу"}
                   rigth_input_scale={"внутрь"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />,
                 <InputRangeSettingPerson
                   title="Поломанность носа"
                   left_input_scale={"влево"}
                   rigth_input_scale={"вправо"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />,
               ];
             case "shapeNoseSetting":
@@ -1344,17 +1344,17 @@ function FaceItemComponent() {
                   title="Кончик носа"
                   left_input_scale={"длинее"}
                   rigth_input_scale={"короче"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />,
                 <InputRangeSettingPerson
                   title="Высота кончика"
                   left_input_scale={"выше"}
                   rigth_input_scale={"ниже"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />,
               ];
             case "cheekbonesSetting":
@@ -1365,9 +1365,9 @@ function FaceItemComponent() {
                   title="Щеки"
                   left_input_scale={"шире"}
                   rigth_input_scale={"уже"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />
               );
             case "lipsSetting":
@@ -1376,9 +1376,9 @@ function FaceItemComponent() {
                   title="Губы"
                   left_input_scale={"толстые"}
                   rigth_input_scale={"тонкие"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />
               );
             case "jawSetting":
@@ -1387,17 +1387,17 @@ function FaceItemComponent() {
                   title="Ширина челюсти"
                   left_input_scale={"уже"}
                   rigth_input_scale={"шире"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />,
                 <InputRangeSettingPerson
                   title="Форма челюсти"
                   left_input_scale={"короче"}
                   rigth_input_scale={"длинее"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />,
               ];
             case "chinShapeSetting":
@@ -1406,17 +1406,17 @@ function FaceItemComponent() {
                   title="Глубина подбородка"
                   left_input_scale={"глубже"}
                   rigth_input_scale={"выпуклее"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />,
                 <InputRangeSettingPerson
                   title="Отступ подбородка"
                   left_input_scale={"наружу"}
                   rigth_input_scale={"внутрь"}
-                  _min={0}
-                  _max={100}
-                  _step={1}
+                  _min={-1.0}
+                  _max={1.0}
+                  _step={0.1}
                 />,
               ];
             case "chinContourSetting":
@@ -1438,8 +1438,13 @@ function InputRangeSettingPerson({
   _max,
   _step,
 }) {
+  const [inputValue, setInputValue] = useState(0);
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
   return (
-    <div className={style.brow_component}>
+    <div>
       <div>
         <span>{title}</span>
         <div className={style.two_range_input}>
@@ -1450,30 +1455,62 @@ function InputRangeSettingPerson({
           <input
             className={style.slyder_type_two}
             type="range"
+            defaultValue={0}
             min={_min}
             max={_max}
             step={_step}
+            onChange={handleInputChange}
           />
         </div>
+        <div>{inputValue}</div>
       </div>
     </div>
   );
 }
 
 function PaletteSettingPerson() {
+  const [activeIndex, setActiveIndex] = useState(3);
+
+  const handleClick = (index) => {
+    setActiveIndex(index);
+  };
+
+  const colors = [
+    "rgb(0, 255, 0)",
+    "rgb(80, 200, 120)",
+    "rgb(173, 216, 230)",
+    "rgb(0, 157, 196)",
+    "rgb(181, 101, 29)",
+    "rgb(101, 67, 33)",
+    "rgb(142, 118, 24)",
+    "rgb(169, 169, 169)",
+    "rgb(211, 211, 211)",
+    "rgb(255, 105, 180)",
+    "rgb(255, 255, 0)",
+    "rgb(128, 0, 128)",
+  ];
+
   return (
     <div>
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
-      <span>6</span>
-      <span>7</span>
-      <span>8</span>
-      <span>9</span>
-      <span>19</span>
-      <span>11</span>
+      <span className={style.palette_title}>Цвет</span>
+      <div className={style.palette}>
+        {colors.map((color, index) => (
+          <span
+            key={index}
+            className={`${style.palette_item} ${
+              activeIndex === index ? style.active_item : ""
+            }`}
+            style={{
+              backgroundColor: color,
+              boxShadow:
+                activeIndex === index
+                  ? "2px 2px 4px rgba(0, 0, 0, 0.3)"
+                  : "none",
+            }}
+            onClick={() => handleClick(index)}
+          ></span>
+        ))}
+      </div>
     </div>
   );
 }
