@@ -58,7 +58,7 @@ import {
 } from "react-ionicons";
 
 function SettingPerson() {
-  const [similarityValue, setValue] = useState(50);
+  const [similarityValue, setValue] = useState(0);
   const [spaciesValue, setSpaciesValue] = useState(0);
   const [personComponent, setPersonComponent] = useState("");
   const [firstGene, setFirstGene] = useState("albert");
@@ -216,7 +216,7 @@ function SettingPerson() {
         return zoe;
 
       default:
-        return niko;
+        return null;
     }
   }
 
@@ -379,10 +379,11 @@ function SettingPerson() {
                 className={style.slyder_type_one}
                 type="range"
                 id="similarity_"
-                min="0"
-                max="100"
+                min="-1.0"
+                max="1.0"
                 value={similarityValue}
-                step="1"
+                step="0.1"
+                defaultValue={similarityValue}
                 onChange={handleSimilarityChange}
               ></input>
               <span>{similarityValue}</span>
