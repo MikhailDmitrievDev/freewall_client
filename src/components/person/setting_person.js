@@ -220,6 +220,12 @@ function SettingPerson() {
     }
   }
 
+  const handleCreatePerson = () => {
+    mp.trigger(
+      "CEF:CLIENT::CREATE_PERSON_BUTTON_CLICK",
+    );
+  }
+
   const handleSpaciesChange = (e) => {
     const newValue = e.target.value;
     setSpaciesValue(newValue);
@@ -391,7 +397,7 @@ function SettingPerson() {
           </div>
         </div>
         <div className={style.save_button}>
-          <button>
+          <button onClick={handleCreatePerson}>
             <Add color={"#fff"} width={"35px"} height={"35px"} />
             <span>Сохранить</span>
           </button>
